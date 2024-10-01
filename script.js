@@ -60,8 +60,26 @@ function generate() {
 // Here is eventListener for changing the color
 
     square.addEventListener("mouseover", () => {
-    
-        square.style.backgroundColor = "blue";
+        i = 1 / 10;
+        r = Math.floor(Math.random() * (255 - 0) ) + 0;
+        g = Math.floor(Math.random() * (255 - 0) ) + 0;
+        b = Math.floor(Math.random() * (255 - 0) ) + 0;
+
+        square.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+        currentopacity = square.style.opacity
+
+        
+
+        square.style.opacity = 1;
+
+        if (currentopacity > 0 ) {
+            square.style.opacity = Number(currentopacity) + 0.3;
+        } else {
+            square.style.opacity = 0.1;
+        }
+        
+        console.log(currentopacity)
+
     })
 }
 } ;
