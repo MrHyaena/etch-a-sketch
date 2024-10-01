@@ -49,7 +49,11 @@ function generate() {
     
     const square = document.createElement("div");
     square.classList.add("square");
-    square.style.flex = "1"
+    square.style.flex = "1";
+    square.style.boxSizing = "border-box";
+    square.style.borderStyle = "solid";
+    square.style.borderWidth = "1px"
+    square.style.borderColor = "grey"
     
     column.appendChild(square);
 
