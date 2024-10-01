@@ -70,10 +70,10 @@ function generate() {
 input.addEventListener("change", function() {
     let v = parseInt(this.value);
     if (v < 1) {
-        this.value = 1;
+        this.value = 50;
         alert("Minimální hodnota je 1")
     }
-    if (v > 50) {this.value = 50;
+    if (v > 100) {this.value = 50;
         alert("Maximální hodnota je 100")
     }
   });
