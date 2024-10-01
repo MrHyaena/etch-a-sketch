@@ -41,18 +41,14 @@ function generate() {
     
     const square = document.createElement("div");
     square.classList.add("square");
-    square.style.backgroundColor = "red";
     square.style.flex = "1"
     
     column.appendChild(square);
+
+    square.addEventListener("mouseover", () => {
+    
+        square.style.backgroundColor = "blue";
+    })
 }
 } ;
 
-function generateRow() {
-    const row = document.createElement("div");
-    row.classList.add("row");
-    row.style.flexGrow = "1"
-    row.style.backgroundColor = "red";
-    
-    board.appendChild(row);
-}
