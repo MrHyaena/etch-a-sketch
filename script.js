@@ -1,22 +1,58 @@
+// First constants for elements with which we work
 const input = document.querySelector("#input");
 const btn = document.querySelector("#btn");
 const board = document.querySelector("#board");
+const controls = document.querySelector("controls")
+const column = document.createElement("column")
 
 // Inner board as div element that can be added or deleted
-const innerBoard = document.createElement("div")
 
-const square = document.createElement("div");
-square.classList.add("square");
 
+// One square and its properties
+
+
+// Action after clicking button
 btn.addEventListener("click", () => {
-    const squareSide = input.value;
+
+    side = input.value;
     input.value = "";
+    squareSum = side * side;
+
+
+
+    for (let i = 0; i < side; i++) {
+        generate();
+    };
+    
 
 });
 
+// Function for generating squares
 function generate() {
-    squareSum = squareSide * squareSide
-    for (let i = 0; i < squareSum; i++) {
-        board.appendChild(square)
-    }
-} 
+
+    const column = document.createElement("div");
+    column.style.flexGrow = "1";
+    column.style.display = "flex";
+    column.style.flexDirection = "column";
+    
+    board.appendChild(column);
+
+    for (let i = 0; i < side; i++) {
+    
+    const square = document.createElement("div");
+    square.classList.add("square");
+    square.style.backgroundColor = "red";
+    square.style.flex = "1"
+    
+    column.appendChild(square);
+}
+} ;
+
+function generateRow() {
+    const row = document.createElement("div");
+    row.classList.add("row");
+    row.style.flexGrow = "1"
+    row.style.backgroundColor = "red";
+    
+    board.appendChild(row);
+}

@@ -12,4 +12,6 @@ h1 {
     height: 700px;
     width: 700px;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
